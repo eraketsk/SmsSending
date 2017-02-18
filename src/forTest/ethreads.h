@@ -15,28 +15,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SMSSENDING_H
-#define SMSSENDING_H
+#ifndef ETHREADS_H
+#define ETHREADS_H
 
-#include <QMainWindow>
+#include <QThread>
 
-namespace Ui {
-  class SmsSending;
-  }
-
-class SmsSending : public QMainWindow
+class EThreads : public QThread
   {
     Q_OBJECT
-
   public:
-    explicit SmsSending(QWidget *parent = 0);
-    ~SmsSending();
-
-  private slots:
-    void on_pushButton_clicked();
-
+  protected:
+    void run();
   private:
-    Ui::SmsSending *ui;
-  };
+    int shotCounter = 100;
+  private slots:
+    void timerHandler();
 
-#endif // SMSSENDING_H
+  };
+#endif // ETHREADS_H

@@ -15,28 +15,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SMSSENDING_H
-#define SMSSENDING_H
+#include "ethreads.h"
+#include <QTimer>
+#include "src/logger/logger.h"
 
-#include <QMainWindow>
+void EThreads::run()
+  {
 
-namespace Ui {
-  class SmsSending;
+    while (shotCounter > 0)
+      {
+        timerHandler();
+        QThread::msleep(1);
+      }
+    this->exit();
   }
 
-class SmsSending : public QMainWindow
+void EThreads::timerHandler()
   {
-    Q_OBJECT
-
-  public:
-    explicit SmsSending(QWidget *parent = 0);
-    ~SmsSending();
-
-  private slots:
-    void on_pushButton_clicked();
-
-  private:
-    Ui::SmsSending *ui;
-  };
-
-#endif // SMSSENDING_H
+    EMERGENCY("EMERGENCY!");
+    ALERT("ALERT!");
+    CRITICAL("CRITICAL!");
+    ERROR("ERROR!");
+    WARNING("WARNING!");
+    NOTICE("NOTICE!");
+    INFORMATIONAL("INFORMATIONAL!");
+    DEBUG("DEBUG!");
+    DEBUG(QString("shotCounter is %1").arg(QString::number(shotCounter)));
+    shotCounter--;
+  }

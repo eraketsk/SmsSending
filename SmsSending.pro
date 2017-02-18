@@ -24,11 +24,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        smssending.cpp \
-    src/smssending.cpp
+    src/smssending.cpp \
+    src/logger/logger.cpp \
+    src/forTest/ethreads.cpp
 
-HEADERS  += smssending.h \
-    src/smssending.h
+HEADERS  += src/smssending.h \
+    src/logger/logger.h \
+    src/lib/singletone/call_once.h \
+    src/lib/singletone/singleton.h \
+    src/lib/logging/log.h \
+    src/forTest/ethreads.h
 
-FORMS    += smssending.ui \
-    src/smssending.ui
+FORMS    += src/smssending.ui

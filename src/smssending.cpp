@@ -18,6 +18,10 @@
 #include "smssending.h"
 #include "ui_smssending.h"
 
+#include <QTextStream>
+#include "src/logger/logger.h"
+#include "src/forTest/ethreads.h"
+
 SmsSending::SmsSending(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::SmsSending)
@@ -28,4 +32,21 @@ SmsSending::SmsSending(QWidget *parent) :
 SmsSending::~SmsSending()
   {
     delete ui;
+  }
+
+void SmsSending::on_pushButton_clicked()
+  {
+    EMERGENCY("EMERGENCY");
+    ALERT("ALERT");
+    CRITICAL("CRITICAL");
+    ERROR("ERROR");
+    WARNING("WARNING");
+    NOTICE("NOTICE");
+    INFORMATIONAL("INFORMATIONAL");
+    DEBUG("DEBUG");
+    for (int i = 0; i < 300;i++)
+      {
+        EThreads* thread = new EThreads();
+        thread->start();
+      }
   }
