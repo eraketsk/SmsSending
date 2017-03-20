@@ -26,13 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
     src/smssending.cpp \
     src/logger/logger.cpp \
-    src/forTest/ethreads.cpp
+    src/forTest/ethreads.cpp \
+    src/lib/serialport/commthread.cpp \
+    src/lib/serialport/seriallistener.cpp
 
 HEADERS  += src/smssending.h \
     src/logger/logger.h \
     src/lib/singletone/call_once.h \
     src/lib/singletone/singleton.h \
     src/lib/logging/log.h \
-    src/forTest/ethreads.h
+    src/forTest/ethreads.h \
+    src/lib/serialport/commthread.h \
+    src/lib/serialport/seriallistener.h
 
 FORMS    += src/smssending.ui

@@ -32,14 +32,14 @@ void EThreads::run()
 
 void EThreads::timerHandler()
   {
-    EMERGENCY("EMERGENCY!");
-    ALERT("ALERT!");
-    CRITICAL("CRITICAL!");
-    ERROR("ERROR!");
-    WARNING("WARNING!");
-    NOTICE("NOTICE!");
-    INFORMATIONAL("INFORMATIONAL!");
-    DEBUG("DEBUG!");
-    DEBUG(QString("shotCounter is %1").arg(QString::number(shotCounter)));
+    LOG_EMERGENCY("EMERGENCY!");
+    LOG_ALERT("ALERT!");
+    LOG_CRITICAL("CRITICAL!");
+    LOG_ERROR("ERROR!");
+    LOG_WARNING("WARNING!");
+    LOG_NOTICE("NOTICE!");
+    LOG_INFORMATIONAL("INFORMATIONAL!");
+    LOG_DEBUG("DEBUG!");
+    LOG_DEBUG(QString("shotCounter is %1").arg(QString::number(shotCounter)));
     shotCounter--;
   }

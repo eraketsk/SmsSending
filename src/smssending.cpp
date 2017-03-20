@@ -20,7 +20,6 @@
 
 #include <QTextStream>
 #include "src/logger/logger.h"
-#include "src/forTest/ethreads.h"
 
 SmsSending::SmsSending(QWidget *parent) :
   QMainWindow(parent),
@@ -36,17 +35,12 @@ SmsSending::~SmsSending()
 
 void SmsSending::on_pushButton_clicked()
   {
-    EMERGENCY("EMERGENCY");
-    ALERT("ALERT");
-    CRITICAL("CRITICAL");
-    ERROR("ERROR");
-    WARNING("WARNING");
-    NOTICE("NOTICE");
-    INFORMATIONAL("INFORMATIONAL");
-    DEBUG("DEBUG");
-    for (int i = 0; i < 300;i++)
-      {
-        EThreads* thread = new EThreads();
-        thread->start();
-      }
+    LOG_EMERGENCY("EMERGENCY");
+    LOG_ALERT("ALERT");
+    LOG_CRITICAL("CRITICAL");
+    LOG_ERROR("ERROR");
+    LOG_WARNING("WARNING");
+    LOG_NOTICE("NOTICE");
+    LOG_INFORMATIONAL("INFORMATIONAL");
+    LOG_DEBUG("DEBUG");
   }

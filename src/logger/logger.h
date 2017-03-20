@@ -32,14 +32,14 @@ namespace logging
     public:
       enum ELoggingLevel
         {
-        EMERGENCY = 0,
-        ALERT = 1,
-        CRITICAL = 2,
-        ERROR = 3,
-        WARNING = 4,
-        NOTICE  = 5,
-        INFORMATIONAL = 6,
-        DEBUG = 7,
+        E_EMERGENCY = 0,
+        E_ALERT = 1,
+        E_CRITICAL = 2,
+        E_ERROR = 3,
+        E_WARNING = 4,
+        E_NOTICE  = 5,
+        E_INFORMATIONAL = 6,
+        E_DEBUG = 7,
         };
       Q_ENUM(ELoggingLevel)
 
@@ -65,35 +65,35 @@ namespace logging
   }
 #define LOGGER_INSTANCE logging::ELogger::instance()
 
-#define EMERGENCY(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::EMERGENCY, \
+#define LOG_EMERGENCY(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_EMERGENCY, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define ALERT(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::ALERT, \
+#define LOG_ALERT(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_ALERT, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define CRITICAL(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::CRITICAL, \
+#define LOG_CRITICAL(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_CRITICAL, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define ERROR(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::ERROR, \
+#define LOG_ERROR(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_ERROR, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define WARNING(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::WARNING, \
+#define LOG_WARNING(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_WARNING, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define NOTICE(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::NOTICE, \
+#define LOG_NOTICE(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_NOTICE, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define INFORMATIONAL(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::INFORMATIONAL, \
+#define LOG_INFORMATIONAL(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_INFORMATIONAL, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 
-#define DEBUG(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::DEBUG, \
+#define LOG_DEBUG(msg) LOGGER_INSTANCE->log(logging::ELogger::ELoggingLevel::E_DEBUG, \
   QCoreApplication::applicationPid(), QThread::currentThreadId(), this->metaObject()->className(), msg, \
   QString(__FUNCTION__), (int)__LINE__)
 

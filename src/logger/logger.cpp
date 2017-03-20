@@ -75,12 +75,12 @@ void ELogger::log(ELoggingLevel level, qint64 pid, Qt::HANDLE tid, QString class
     line.append("] ");
     switch (level)
       {
-      case EMERGENCY:
-      case ALERT:
-      case CRITICAL:
-      case ERROR:
-      case WARNING:
-      case DEBUG:
+      case E_EMERGENCY:
+      case E_ALERT:
+      case E_CRITICAL:
+      case E_ERROR:
+      case E_WARNING:
+      case E_DEBUG:
         line.append("[");
         line.append(className);
         line.append("::");
@@ -89,8 +89,8 @@ void ELogger::log(ELoggingLevel level, qint64 pid, Qt::HANDLE tid, QString class
         line.append(QString::number(lineNum));
         line.append("] ");
         break;
-      case NOTICE:
-      case INFORMATIONAL:
+      case E_NOTICE:
+      case E_INFORMATIONAL:
         break;
       default:
         break;
