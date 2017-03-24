@@ -28,7 +28,11 @@ SOURCES += main.cpp\
     src/logger/logger.cpp \
     src/forTest/ethreads.cpp \
     src/lib/serialport/commthread.cpp \
-    src/lib/serialport/seriallistener.cpp
+    src/lib/serialport/seriallistener.cpp \
+    src/gts5260/gts5260smsentry.cpp \
+    src/smsmodule/smsmodulemessageheadred.cpp \
+    src/smsmodule/smsmodulemessagecommon.cpp \
+    src/gts5260/gts5260smsmodule.cpp
 
 HEADERS  += src/smssending.h \
     src/logger/logger.h \
@@ -37,6 +41,11 @@ HEADERS  += src/smssending.h \
     src/lib/logging/log.h \
     src/forTest/ethreads.h \
     src/lib/serialport/commthread.h \
-    src/lib/serialport/seriallistener.h
+    src/lib/serialport/seriallistener.h \
+    src/gts5260/gts5260smsentry.h \
+    src/smsmodule/smsmodulemessageheadred.h \
+    src/smsmodule/ismsmodule.h \
+    src/smsmodule/smsmodulemessagecommon.h \
+    src/gts5260/gts5260smsmodule.h
 
 FORMS    += src/smssending.ui

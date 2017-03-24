@@ -1,6 +1,5 @@
 #ifndef COMMTHREAD_H
 #define COMMTHREAD_H
-
 #include <QThread>
 #include <QStringList>
 #include "src/lib/serialport/seriallistener.h"

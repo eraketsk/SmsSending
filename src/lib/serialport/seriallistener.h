@@ -4,12 +4,10 @@
 #ifndef __LINUX__
 #include <windows.h>
 #endif
+#include <list>
+#include <string>
 
 namespace serial {
-
-#include <string>
-#include <list>
-
 
 class SerialListener
 {
@@ -48,7 +46,5 @@ private:
     int   _bufferSize;
     bool  _busy;
 };
-
 }//namespace serial
-
 #endif // SERIALLISTENER_H

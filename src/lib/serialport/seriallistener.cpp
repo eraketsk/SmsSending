@@ -7,11 +7,11 @@
 #include "memory.h"
 #endif
 
-namespace serial {
-
 #include <iostream>
 #include <string>
 #include <sstream>
+
+namespace serial {
 
   using namespace std;
 //==============================================================================
@@ -175,7 +175,7 @@ namespace serial {
       Dcb.DCBlength = sizeof(DCB);
 
       if(!GetCommState(_port->device(), &Dcb)) {
-           << "Error in GetCommState()";
+          cout << "Error in GetCommState()";
           CloseHandle(_port->_device);
           return false;
         }
@@ -337,3 +337,4 @@ namespace serial {
     }
 
   } // namespace serial
+
